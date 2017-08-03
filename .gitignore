@@ -1,9 +1,9 @@
-Minigolf_physics/Library/
-Minigolf_physics/Temp/
-Minigolf_physics/Obj/
-Minigolf_physics/Build/
-Minigolf_physics/Builds/
-Minigolf_physics/Assets/AssetStoreTools*
+Minigolf physics/Library/
+Minigolf physics/Temp/
+Minigolf physics/Obj/
+Minigolf physics/Build/
+Minigolf physics/Builds/
+Minigolf physics/Assets/AssetStoreTools*
 
 # Visual Studio 2015 cache directory
 /.vs/
@@ -32,8 +32,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-Minigolf_physics/Assets/AEPToUnityAnimation/
-Minigolf_physics/Assets/AEPToUnityAnimation.meta
+Minigolf physics/Assets/AEPToUnityAnimation/
+Minigolf physics/Assets/AEPToUnityAnimation.meta
 Graphics/
 Build/
-Minigolf physics/Library/
+

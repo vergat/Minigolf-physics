@@ -32,11 +32,11 @@ public class DragMouseOrbit : MonoBehaviour {
     {
         if (target)
         {
-           // if (Input.GetMouseButton(0))
-            //{
+            if (!Input.GetMouseButton(0))
+            {
                 velocityX += xSpeed * Input.GetAxis("Mouse X") * distance * 0.02f;
                 velocityY += ySpeed * Input.GetAxis("Mouse Y") * 0.02f;
-           // }
+            }
             rotationYAxis += velocityX;
             rotationXAxis -= velocityY;
             rotationXAxis = ClampAngle(rotationXAxis, yMinLimit, yMaxLimit);
@@ -54,6 +54,7 @@ public class DragMouseOrbit : MonoBehaviour {
             Vector3 position = rotation * negDistance + target.position;
 
             transform.rotation = rotation;
+
             transform.position = position;
             velocityX = Mathf.Lerp(velocityX, 0, Time.deltaTime * smoothTime);
             velocityY = Mathf.Lerp(velocityY, 0, Time.deltaTime * smoothTime);

@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class sphere : MonoBehaviour {
 
-    [SerializeField]
-    private Vector3 offset=Vector3.zero;
+    private Transform arrow;
 
     void Start()
     {
-        
+        arrow=transform.Find("Arrow");
+
     }
     void Update()
     {
-
-       // Camera.main.transform.position = gameObject.transform.position + offset;
+            if (Input.GetMouseButton(1) && GetComponent<Rigidbody>().velocity == Vector3.zero)
+            {
+                arrow.transform.rotation = Quaternion.Euler(0, Camera.main.transform.rotation.eulerAngles.y - 90.0f, 0);
+            }  
     }
 }

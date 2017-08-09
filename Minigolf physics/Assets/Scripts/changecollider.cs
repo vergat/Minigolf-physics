@@ -9,12 +9,12 @@ public class changecollider : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject != meh)
+       /* if (other.gameObject != meh)
         {
             meh.gameObject.GetComponent<Rigidbody>().velocity=Vector3.zero;
             meh.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-
+            //meh.gameObject.SetActive(false);
             Debug.Log("beh");
-        }
+        }*/
     }
 }

@@ -14,7 +14,6 @@ public class Test : MonoBehaviour {
     void Start()
     {
         position = mace.transform.localPosition;
-        Debug.Log("aaa");
     }
 
     void Update () {

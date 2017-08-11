@@ -7,11 +7,13 @@ public class ArrowController : MonoBehaviour {
     [SerializeField]
     private GameObject ball;
     private Transform aimLine;
-    private bool prova = false;
-
+    private bool check = false;
+    public Vector3 ballPosition;
     void Start()
     {
+        Cursor.visible = false;
         aimLine=gameObject.transform.Find("AimLine");
+        ballPosition = ball.transform.position;
         aimLine.gameObject.SetActive(false);
     }
 
@@ -19,11 +21,12 @@ public class ArrowController : MonoBehaviour {
     {
         if(ball.GetComponent<Rigidbody>().velocity == Vector3.zero)
         {
-            if (!prova)
+            if (!check)
             {
                 aimLine.gameObject.SetActive(true);
                 transform.rotation = Quaternion.Euler(0, Camera.main.transform.rotation.eulerAngles.y - 90.0f, 0);
-                prova = true;
+                ballPosition = ball.transform.position;
+                check = true;
             }
             if (Input.GetMouseButton(1))
             {
@@ -32,10 +35,10 @@ public class ArrowController : MonoBehaviour {
         }
         else
         {
-            if (prova)
+            if (check)
             {
                 aimLine.gameObject.SetActive(false);
-                prova = false;
+                check = false;
             }            
         }
 

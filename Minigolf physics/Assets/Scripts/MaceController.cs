@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test : MonoBehaviour {
+public class MaceController : MonoBehaviour {
 
     [SerializeField]
     private GameObject ball;
@@ -24,17 +24,11 @@ public class Test : MonoBehaviour {
              {
                 mace.transform.localPosition = position;
                 mace.transform.localRotation = Quaternion.Euler(Vector3.zero);
-                //meh.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 mace.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
                 mace.gameObject.SetActive(true);
                 check = true;
              }
-            
-            //mace.transform.localRotation = position.localRotation;
-            //gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(800, 0, 0));
-            mace.gameObject.GetComponent<Rigidbody>().velocity=transform.right * 5.0f * Input.GetAxis("Mouse Y");
-            //transform.position += transform.right * Time.deltaTime * 10.0f*Input.GetAxis("Mouse Y");
-            
+            mace.gameObject.GetComponent<Rigidbody>().velocity=transform.right * 5.0f * Input.GetAxis("Mouse Y");      
         }
         else
         {
